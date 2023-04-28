@@ -1,10 +1,12 @@
-﻿namespace ChessGame
+﻿using ChessGame.tabuleiro;
+namespace ChessGame
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
+            Tabuleiro tab = new Tabuleiro(8, 8);
+            Console.ReadLine();
         }
     }
 }

@@ -15,5 +15,10 @@ namespace ChessGame.tabuleiro
             Tab = tab;
             QtdMovimentos = 0;
         }
+
+        public void IncrementarQteMovimentos()
+        {
+            QtdMovimentos++;
+        }
     }
 }

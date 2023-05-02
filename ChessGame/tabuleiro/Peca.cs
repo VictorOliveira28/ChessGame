@@ -20,6 +20,10 @@ namespace ChessGame.tabuleiro
         {
             QtdMovimentos++;
         }
+        public void DecrementarQteMovimentos()
+        {
+            QtdMovimentos--;
+        }
 
         public bool ExisteMovimentosPossiveis()
         {

@@ -42,7 +42,7 @@ namespace ChessGame.xadrez
                 mat[pos.Linha, pos.Coluna] = true;
             }
 
-            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna - 2);
+            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna + 2);
 
             if (Tab.posicaoValida(pos) && PodeMover(pos))
             {

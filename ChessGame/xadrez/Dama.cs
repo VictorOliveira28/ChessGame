@@ -1,4 +1,6 @@
 ﻿using ChessGame.tabuleiro;
+
+
 namespace ChessGame.xadrez
 {
     internal class Dama : Peca
@@ -29,7 +31,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.Coluna = pos.Coluna - 1;
+                pos.definirValores(pos.Linha, pos.Coluna - 1);
             }
 
             //direita
@@ -41,7 +43,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.Coluna = pos.Coluna + 1;
+                pos.definirValores(pos.Linha, pos.Coluna + 1);
             }
             //acima
             pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
@@ -52,7 +54,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.Linha = pos.Linha - 1;
+                pos.definirValores(pos.Linha - 1, pos.Coluna);
             }
 
             //abaixo
@@ -64,7 +66,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.Linha = pos.Linha + 1;
+                pos.definirValores(pos.Linha + 1, pos.Coluna);
             }
 
             //noroeste
@@ -72,10 +74,11 @@ namespace ChessGame.xadrez
             while (Tab.posicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
-                if (Tab.posicaoValida(pos) && PodeMover(pos))
+                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    break;                    
                 }
+                pos.definirValores(pos.Linha - 1, pos.Coluna - 1);
             }
 
             //nordeste
@@ -83,10 +86,11 @@ namespace ChessGame.xadrez
             while (Tab.posicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
-                if (Tab.posicaoValida(pos) && PodeMover(pos))
+                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    break;
                 }
+                pos.definirValores(pos.Linha - 1, pos.Coluna + 1);
             }
 
             //sudeste
@@ -94,21 +98,24 @@ namespace ChessGame.xadrez
             while (Tab.posicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
-                if (Tab.posicaoValida(pos) && PodeMover(pos))
+                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    break;
                 }
+                pos.definirValores(pos.Linha + 1, pos.Coluna + 1);
             }
+
 
             //sudoeste
             pos.definirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
             while (Tab.posicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
-                if (Tab.posicaoValida(pos) && PodeMover(pos))
+                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
                 {
-                    mat[pos.Linha, pos.Coluna] = true;
+                    break;
                 }
+                pos.definirValores(pos.Linha + 1, pos.Coluna - 1);
             }
             return mat;
         }

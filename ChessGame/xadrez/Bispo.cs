@@ -30,7 +30,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.definirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
+                pos.definirValores(pos.Linha - 1, pos.Coluna - 1);
             }
 
             //Nordeste
@@ -42,7 +42,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.definirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
+                pos.definirValores(pos.Linha - 1, pos.Coluna + 1);
             }
 
             //Sudeste
@@ -54,7 +54,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.definirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
+                pos.definirValores(pos.Linha + 1, pos.Coluna + 1);
             }
 
             //Sudoeste
@@ -66,7 +66,7 @@ namespace ChessGame.xadrez
                 {
                     break;
                 }
-                pos.definirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
+                pos.definirValores(pos.Linha + 1, pos.Coluna - 1);
             }
             return mat;
         }

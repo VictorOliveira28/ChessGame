@@ -5,8 +5,9 @@ namespace ChessGame.xadrez
 {
     internal class Peao : Peca
     {
+        
         public Peao(Tabuleiro tab, Cor cor) : base (cor, tab)
-        {
+        {           
         }
         public override string ToString()
         {
@@ -35,7 +36,7 @@ namespace ChessGame.xadrez
                     mat[pos.Linha, pos.Coluna] = true;
                 }
 
-                pos.definirValores(Posicao.Linha - 2, Posicao.Coluna);
+                pos.definirValores(Posicao.Linha - 2, Posicao.Coluna);                
                 if (Tab.posicaoValida(pos) && Livre(pos) && QtdMovimentos == 0)
                 {
                     mat[pos.Linha, pos.Coluna] = true;
